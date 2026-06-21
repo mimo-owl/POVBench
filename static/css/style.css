@@ -144,3 +144,24 @@ figcaption { color: var(--text-muted); font-size: 0.92rem; margin-top: 10px; }
   .carousel-btn.prev { left: 4px; }
   .carousel-btn.next { right: 4px; }
 }
+
+/* ===== TL;DR callout ===== */
+.tldr-section { padding-top: 36px; padding-bottom: 8px; }
+.tldr-wrap { max-width: 1180px; }
+.tldr-section.section:nth-of-type(even) { background: var(--bg); }
+.tldr {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  margin: 0;
+  font-size: 1.02rem;
+}
+.tldr-label {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--accent-dark);
+  letter-spacing: 0.04em;
+  margin-right: 8px;
+}

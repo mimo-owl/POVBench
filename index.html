@@ -1,133 +1,131 @@
 <!DOCTYPE html>
 <!--
-  ============================================================================
-  PROJECT PAGE TEMPLATE
-  ----------------------------------------------------------------------------
-  How to use:
-    1. Replace every {{PLACEHOLDER}} below with your paper's content.
-    2. Search the file for "{{" to make sure none are left.
-    3. Drop figures into static/images/ and update the <img> src paths.
-    4. See README.md for the full checklist and GitHub Pages publishing steps.
-  ============================================================================
+  POVBench project page. Built from paper-project-page-template.
+  Remaining {{PLACEHOLDERS}} to fill once the manuscript is final:
+  arXiv URL, paper PDF, dataset URL, figures, video, BibTeX id/year.
+  Search this file for "{{" to find what's left.
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ===== SEO / social preview (Open Graph + Twitter card) ============== -->
-  <title>{{PAPER_TITLE}}</title>
-  <meta name="description" content="{{SHORT_DESCRIPTION}}">
-  <meta name="keywords" content="{{KEYWORD_1}}, {{KEYWORD_2}}, {{KEYWORD_3}}">
+  <title>Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models</title>
+  <meta name="description" content="POVBench: a benchmark of 3D scenes and queries that evaluates situated, observer-grounded spatial reasoning in vision-language models.">
+  <meta name="keywords" content="spatial reasoning, vision-language models, embodied AI, perspective-taking, benchmark">
 
-  <meta property="og:title" content="{{PAPER_TITLE}}">
-  <meta property="og:description" content="{{SHORT_DESCRIPTION}}">
+  <meta property="og:title" content="Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models">
+  <meta property="og:description" content="POVBench: a benchmark for observer-grounded spatial reasoning in VLMs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{PROJECT_PAGE_URL}}">
-  <!-- 1200x630 px recommended. Put the image in static/images/ -->
-  <meta property="og:image" content="static/images/social_preview.png">
+  <meta property="og:url" content="https://mimo-owl.github.io/POVBench/">
+  <meta property="og:image" content="static/images/teaser.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{PAPER_TITLE}}">
-  <meta name="twitter:description" content="{{SHORT_DESCRIPTION}}">
-  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:title" content="Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models">
+  <meta name="twitter:description" content="POVBench: a benchmark for observer-grounded spatial reasoning in VLMs.">
 
-  <!-- ===== Fonts + styles =============================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome + Academicons for icons (GitHub, arXiv, etc.) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/style.css">
-  <link rel="icon" href="static/images/favicon.ico">
 </head>
 
 <body>
 
-  <!-- ======================= HERO / TITLE BLOCK ======================= -->
   <header class="hero">
     <div class="container">
-      <h1 class="paper-title">{{PAPER_TITLE}}</h1>
+      <h1 class="paper-title">Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models</h1>
 
-      <!-- Conference / venue badge. Delete if under review. -->
-      <p class="venue">{{VENUE}}</p>
+      <!-- <p class="venue">Preprint, 2026</p> -->
 
-      <!-- ===== Authors =====
-           Duplicate one <span class="author"> block per author.
-           Add a superscript number for affiliation, and the "equal" class
-           plus a * symbol for equal contribution if needed. -->
       <div class="authors">
-        <span class="author"><a href="{{AUTHOR_1_URL}}">{{AUTHOR_1_NAME}}</a><sup>1</sup></span>
-        <span class="author"><a href="{{AUTHOR_2_URL}}">{{AUTHOR_2_NAME}}</a><sup>2</sup></span>
-        <span class="author"><a href="{{AUTHOR_3_URL}}">{{AUTHOR_3_NAME}}</a><sup>1</sup></span>
+        <span class="author"><a href="#">Mimo Shirasaka</a><sup>1</sup></span>
+        <span class="author"><a href="#">Haochen Zhang</a><sup>2</sup></span>
+        <span class="author"><a href="https://www.cs.cmu.edu/~ybisk/">Yonatan Bisk</a><sup>2</sup></span>
       </div>
 
-      <!-- ===== Affiliations ===== -->
       <div class="affiliations">
-        <span><sup>1</sup>{{AFFILIATION_1}}</span>
-        <span><sup>2</sup>{{AFFILIATION_2}}</span>
+        <span><sup>1</sup>The University of Tokyo</span>
+        <span><sup>2</sup>Carnegie Mellon University</span>
       </div>
-      <!-- Optional note, e.g. equal contribution / corresponding author -->
-      <div class="author-note">{{AUTHOR_NOTE}}</div>
 
-      <!-- ===== Action buttons =====
-           Delete any button you don't have a link for. -->
       <div class="links">
+        <!-- Paper button: hidden until the arXiv manuscript is public.
+             Put the arXiv PDF URL in PAPER_PDF_URL and uncomment. -->
+        <!--
         <a class="link-button" href="{{PAPER_PDF_URL}}">
           <i class="fas fa-file-pdf"></i><span>Paper</span></a>
+        -->
+        <!-- arXiv button: disabled for now. Once the paper is accepted,
+             move the arXiv manuscript here and put the camera-ready/conference
+             version in the Paper button above. -->
+        <!--
         <a class="link-button" href="{{ARXIV_URL}}">
           <i class="ai ai-arxiv"></i><span>arXiv</span></a>
-        <a class="link-button" href="{{CODE_URL}}">
+        -->
+        <a class="link-button" href="https://github.com/mimo-owl/POVBench">
           <i class="fab fa-github"></i><span>Code</span></a>
+        <!-- Dataset button: hidden until the dataset is released.
+             Put the dataset URL in DATASET_URL and uncomment. -->
+        <!--
         <a class="link-button" href="{{DATASET_URL}}">
           <i class="fas fa-database"></i><span>Dataset</span></a>
-        <a class="link-button" href="{{DEMO_URL}}">
-          <i class="fas fa-play"></i><span>Demo</span></a>
+        -->
       </div>
     </div>
   </header>
 
-  <!-- ======================= TEASER FIGURE ======================= -->
-  <section class="section">
-    <div class="container">
-      <figure class="teaser">
-        <img src="static/images/teaser.png" alt="{{TEASER_ALT_TEXT}}">
-        <figcaption>{{TEASER_CAPTION}}</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ======================= ABSTRACT ======================= -->
-  <section class="section">
-    <div class="container narrow">
-      <h2>Abstract</h2>
-      <p class="abstract">
-        {{ABSTRACT_TEXT}}
+  <section class="section tldr-section">
+    <div class="container tldr-wrap">
+      <p class="tldr">
+        <span class="tldr-label">TL;DR</span>
+        We introduce <strong>POVBench</strong>, which disentangles three forms of observer
+        grounding: <em>given</em>, <em>stated</em>, and <em>inferred</em>. Evaluation reveals that
+        SOTA VLMs struggle most when the viewpoint must be inferred, and we explore reasoning
+        methods that improve localization.
       </p>
     </div>
   </section>
 
-  <!-- ======================= METHOD / APPROACH ======================= -->
   <section class="section">
-    <div class="container narrow">
-      <h2>{{SECTION_1_TITLE}}</h2>
-      <p>{{SECTION_1_TEXT}}</p>
-      <figure>
-        <img src="static/images/method.png" alt="{{METHOD_ALT_TEXT}}">
-        <figcaption>{{METHOD_CAPTION}}</figcaption>
+    <div class="container">
+      <figure class="teaser">
+        <img src="static/images/teaser.png" alt="Overview of contextual observer grounding in POVBench">
+        <figcaption>Figure 1. Overview of contextual observer grounding. Given robot exploration observations and a natural-language sentence, models must infer the observer viewpoint from contextual cues, reconstruct the situated spatial relation, and localize an underspecified target object. POVBench contains three grounding conditions: A) Inferred, B) Stated, and C) Given.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- ======================= RESULTS ======================= -->
   <section class="section">
     <div class="container narrow">
-      <h2>{{SECTION_2_TITLE}}</h2>
+      <h2>Abstract</h2>
+      <p class="abstract">
+        Reasoning over language instructions in embodied tasks such as robotics often requires 3D understanding. Humans resolve implicit reference to objects through shared context, perspective-taking, and commonsense. Recent vision-language models (VLMs) appear capable of spatial reasoning in 2D, yet fail at embodied perspective reasoning: inferring an object's location from an implicit reference by combining perspective-taking with commonsense knowledge about human activity and physical environments. To address this, we construct the Point-of-View Benchmark (POVBench), a dataset of 3D scenes and queries that disentangles three forms of observer grounding in natural embodied communication: given, stated, and inferred. The tasks require models to reason over multi-view observations and localize target objects from situated spatial and contextual cues. Across state-of-the-art VLMs, we find that models struggle to map both implicit and explicit directional language into accurate object localizations, especially when the observer's perspective must be inferred from context. We further show that explicit reasoning over observer-centered spatial relations improves localization of underspecified objects.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benchmark section: hidden until manuscript text + method.png are ready.
+  <section class="section">
+    <div class="container narrow">
+      <h2>The POVBench Benchmark</h2>
+      <p>{{SECTION_1_TEXT}}</p>
+      <figure>
+        <img src="static/images/method.png" alt="POVBench task and data construction">
+        <figcaption>{{METHOD_CAPTION}}</figcaption>
+      </figure>
+    </div>
+  </section>
+  -->
+
+  <!-- Findings section: hidden until manuscript text + result images are ready.
+  <section class="section">
+    <div class="container narrow">
+      <h2>Findings</h2>
       <p>{{SECTION_2_TEXT}}</p>
 
-      <!-- Image carousel: duplicate / delete <div class="slide"> as needed.
-           Controlled by static/js/main.js -->
       <div class="carousel" data-carousel>
         <div class="slides">
           <div class="slide"><img src="static/images/result1.png" alt="result 1"><p>{{RESULT_1_CAPTION}}</p></div>
@@ -140,43 +138,38 @@
       </div>
     </div>
   </section>
+  -->
 
-  <!-- ======================= VIDEO (optional) ======================= -->
-  <section class="section">
-    <div class="container narrow">
-      <h2>Video</h2>
-      <div class="video-wrapper">
-        <!-- YouTube embed: replace VIDEO_ID. Or swap for a local <video> tag. -->
-        <iframe src="https://www.youtube.com/embed/{{YOUTUBE_VIDEO_ID}}"
-                title="Paper video" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= BIBTEX ======================= -->
   <section class="section">
     <div class="container narrow">
       <h2>BibTeX</h2>
-      <pre class="bibtex"><code>{{BIBTEX_ENTRY}}</code></pre>
+      <pre class="bibtex"><code>@article{shirasaka2026contextualpov,
+  title   = {Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models},
+  author  = {Shirasaka, Mimo and Zhang, Haochen and Bisk, Yonatan},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</code></pre>
       <button class="copy-btn" data-copy-bibtex>Copy</button>
     </div>
   </section>
 
-  <!-- ======================= ACKNOWLEDGEMENTS (optional) ======================= -->
-  <section class="section">
+  <!-- <section class="section">
     <div class="container narrow">
       <h2>Acknowledgements</h2>
       <p>{{ACKNOWLEDGEMENTS_TEXT}}</p>
     </div>
-  </section>
+  </section> -->
 
-  <!-- ======================= FOOTER ======================= -->
   <footer class="footer">
     <div class="container narrow">
       <p>
-        This website is licensed under a
-        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        Template adapted for {{YOUR_NAME_OR_LAB}}.
+        &copy; 2026 Authors. All rights reserved.
+        <!-- The text and figures on this page may not be reused without permission. -->
+      </p>
+      <p>
+        Design inspired by the
+        <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>
+        and the <a href="https://nerfies.github.io/">Nerfies</a> project page.
       </p>
     </div>
   </footer>
