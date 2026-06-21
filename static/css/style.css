@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Project page template stylesheet
+   Tweak the variables below to rebrand. No build step required.
+   ========================================================================== */
+
+:root {
+  --accent: #2962ff;          /* link + button color */
+  --accent-dark: #0039cb;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --bg: #ffffff;
+  --bg-alt: #f5f7fa;
+  --border: #e3e6ea;
+  --maxw: 1000px;
+  --maxw-narrow: 760px;
+  --font-body: "Noto Sans", "Google Sans", system-ui, -apple-system, sans-serif;
+  --font-head: "Google Sans", "Noto Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+.container.narrow { max-width: var(--maxw-narrow); }
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+  padding: 64px 0 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.paper-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+.venue {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent-dark);
+  background: rgba(41, 98, 255, 0.1);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+}
+.authors { font-size: 1.15rem; margin-bottom: 8px; }
+.author { margin: 0 10px; white-space: nowrap; }
+.author a { color: var(--text); font-weight: 600; }
+.author a:hover { color: var(--accent); }
+.affiliations { color: var(--text-muted); font-size: 1rem; }
+.affiliations span { margin: 0 8px; }
+.author-note { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; font-style: italic; }
+
+/* ===== Action buttons ===== */
+.links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.link-button {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--text); color: #fff;
+  padding: 10px 20px; border-radius: 999px;
+  font-weight: 600; font-size: 0.95rem;
+  transition: background 0.15s, transform 0.15s;
+}
+.link-button:hover { background: var(--accent); text-decoration: none; transform: translateY(-1px); }
+.link-button i { font-size: 1.05rem; }
+
+/* ===== Sections ===== */
+.section { padding: 44px 0; }
+.section:nth-of-type(even) { background: var(--bg-alt); }
+h2 {
+  font-family: var(--font-head);
+  font-size: 1.6rem; font-weight: 700;
+  text-align: center; margin: 0 0 24px;
+}
+.abstract { text-align: justify; }
+
+/* ===== Figures ===== */
+figure { margin: 24px 0; text-align: center; }
+figure img { max-width: 100%; height: auto; border-radius: 8px; }
+figcaption { color: var(--text-muted); font-size: 0.92rem; margin-top: 10px; }
+.teaser img { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+/* ===== Carousel ===== */
+.carousel { position: relative; max-width: 760px; margin: 0 auto; }
+.carousel .slides { overflow: hidden; border-radius: 8px; }
+.carousel .slide { display: none; text-align: center; }
+.carousel .slide.active { display: block; }
+.carousel .slide img { max-width: 100%; border-radius: 8px; }
+.carousel .slide p { color: var(--text-muted); font-size: 0.92rem; margin: 10px 0 0; }
+.carousel-btn {
+  position: absolute; top: 40%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: #fff; border: none;
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+  font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+}
+.carousel-btn:hover { background: var(--accent); }
+.carousel-btn.prev { left: -8px; }
+.carousel-btn.next { right: -8px; }
+.dots { text-align: center; margin-top: 12px; }
+.dots button {
+  width: 10px; height: 10px; border-radius: 50%; border: none;
+  background: var(--border); margin: 0 4px; cursor: pointer; padding: 0;
+}
+.dots button.active { background: var(--accent); }
+
+/* ===== Video ===== */
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden; }
+.video-wrapper iframe, .video-wrapper video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ===== BibTeX ===== */
+.bibtex {
+  background: #1e1e2e; color: #e0e0e0;
+  padding: 20px; border-radius: 8px; overflow-x: auto;
+  font-size: 0.88rem; line-height: 1.5; text-align: left;
+}
+.copy-btn {
+  margin-top: 10px; background: var(--text); color: #fff; border: none;
+  padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+}
+.copy-btn:hover { background: var(--accent); }
+
+/* ===== Footer ===== */
+.footer { padding: 32px 0; text-align: center; color: var(--text-muted); font-size: 0.88rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .author { display: inline-block; margin: 2px 8px; }
+  .carousel-btn.prev { left: 4px; }
+  .carousel-btn.next { right: 4px; }
+}
