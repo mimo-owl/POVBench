@@ -36,7 +36,7 @@
 
   <header class="hero">
     <div class="container">
-      <h1 class="paper-title">Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models</h1>
+      <h1 class="paper-title">Contextual Observer Grounding: Evaluating Situated Spatial Reasoning in Vision-Language Models</h1>
 
       <!-- <p class="venue">Preprint, 2026</p> -->
 
@@ -79,10 +79,9 @@
     <div class="container tldr-wrap">
       <p class="tldr">
         <span class="tldr-label">TL;DR</span>
-        We introduce <strong>POVBench</strong>, which disentangles three forms of observer
-        grounding: <em>inferred</em>, <em>stated</em>, and <em>given</em>. Evaluation reveals that
-        SOTA VLMs struggle most when the viewpoint must be inferred, and we explore reasoning
-        methods that improve localization.
+        We introduce <strong>POVBench</strong>, a benchmark for evaluating contextual observer
+        grounding, and show that mapping observer-relative language to object locations remains
+        a challenging problem for state-of-the-art VLMs.
       </p>
     </div>
   </section>
@@ -91,7 +90,7 @@
     <div class="container">
       <figure class="teaser">
         <img src="static/images/teaser.png" alt="Overview of contextual observer grounding in POVBench">
-        <figcaption>Figure 1. Overview of contextual observer grounding. Given robot exploration observations and a natural-language sentence, models must infer the observer viewpoint from contextual cues, reconstruct the situated spatial relation, and localize an underspecified target object. POVBench contains three grounding conditions: A) Inferred, B) Stated, and C) Given.</figcaption>
+        <figcaption>Figure 1. Overview of contextual observer grounding. Models infer the observer's location (<em>operational reasoning</em>), reconstruct their perspective (<em>observer grounding</em>), and localize the target (<em>relational reasoning</em>). Conditions <em>A: Inferred</em>, <em>B: Stated</em>, and <em>C: Given</em> require three, two, and one of these steps, respectively.</figcaption>
       </figure>
     </div>
   </section>
@@ -100,7 +99,7 @@
     <div class="container narrow">
       <h2>Abstract</h2>
       <p class="abstract">
-        Reasoning over language instructions in embodied tasks such as robotics often requires 3D understanding. Humans resolve implicit reference to objects through shared context, perspective-taking, and commonsense. Recent vision-language models (VLMs) appear capable of spatial reasoning in 2D, yet fail at embodied perspective reasoning: inferring an object's location from an implicit reference by combining perspective-taking with commonsense knowledge about human activity and physical environments. To address this, we construct the Point-of-View Benchmark (POVBench), a dataset of 3D scenes and queries that disentangles three forms of observer grounding in natural embodied communication: given, stated, and inferred. The tasks require models to reason over multi-view observations and localize target objects from situated spatial and contextual cues. Across state-of-the-art VLMs, we find that models struggle to map both implicit and explicit directional language into accurate object localizations, especially when the observer's perspective must be inferred from context. We further show that explicit reasoning over observer-centered spatial relations improves localization of underspecified objects.
+        Reasoning over language instructions in embodied tasks such as robotics often requires understanding spatial relations from a speaker's situated perspective. Humans infer such perspectives from shared environmental knowledge, activity context, and commonsense. Recent vision-language models (VLMs) appear capable of spatial reasoning, but their ability to infer a speaker's viewpoint from contextual cues and interpret situated spatial relations from that viewpoint remains unclear. We call this capability contextual observer grounding. To study this capability, we construct the Point-of-View Benchmark (POVBench), a dataset of 3D scenes and queries that disentangles Inferred, Stated, and Given forms of observer grounding in natural embodied communication. Given multi-view observations and a natural-language sentence, models must localize unseen or underspecified targets from situated spatial and contextual cues. Across state-of-the-art VLMs, localizing targets from directional language remains challenging, even when observer grounding is made explicit. We find that explicit breakdowns of observer-relative spatial reasoning improve target localization.
       </p>
     </div>
   </section>
@@ -142,7 +141,7 @@
     <div class="container narrow">
       <h2>BibTeX</h2>
       <pre class="bibtex"><code>@article{shirasaka2026contextualpov,
-  title   = {Contextual-POV: Evaluating Situated Spatial Reasoning in Vision-Language Models},
+  title   = {Contextual Observer Grounding: Evaluating Situated Spatial Reasoning in Vision-Language Models},
   author  = {Shirasaka, Mimo and Zhang, Haochen and Bisk, Yonatan},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
